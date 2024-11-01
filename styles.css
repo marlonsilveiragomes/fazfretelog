@@ -671,6 +671,9 @@ footer {
     .cabecalho {
         padding: 1% 5%; /* Reduzir o padding */
         margin-bottom: 100px; /* Ajustar o espaço inferior */
+        display: flex; /* Ativar flexbox */
+        justify-content: space-between; /* Espaçar logo e menu hamburguer */
+        align-items: center; /* Centralizar verticalmente */
     }
 
     .cabecalhoMenu {
@@ -681,12 +684,11 @@ footer {
 
     .logo {
         width: 50%; /* Aumentar a largura da logo para ocupar mais espaço */
-        margin: 0 auto; /* Centralizar a logo */
+        margin: 0; /* Remover margin para centralizar */
     }
 
     .menu-hamburguer {
         display: block; /* Mostrar o botão hamburguer */
-        margin-left: auto; /* Alinhar à direita */
         background-color: transparent; /* Fundo transparente */
         border: none; /* Remover borda */
         font-size: 24px; /* Aumentar o tamanho do ícone */
@@ -723,17 +725,11 @@ footer {
     }
 
     .logo {
-        width: 70%; /* Aumentar a largura da logo para ocupar mais espaço */
-        margin: 0 auto; /* Centralizar a logo */
+        width: 50%; /* Definir a largura da logo */
     }
 
     .menu-hamburguer {
         font-size: 28px; /* Aumentar o tamanho do ícone do botão */
-    }
-
-    .cabecalhoMenuLink {
-        padding: 10px; /* Reduzir o padding para links */
-        font-size: 16px; /* Ajustar o tamanho da fonte */
     }
 
     .cabecalhoMenuLinks {
