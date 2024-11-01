@@ -683,8 +683,9 @@ footer {
     }
 
     .logo {
-        width: 50%; /* Aumentar a largura da logo para ocupar mais espaço */
-        margin: 0; /* Remover margin para centralizar */
+        width: auto; /* Ajustar largura do logotipo */
+        max-width: 150px; /* Definir uma largura máxima */
+        height: auto; /* Manter a proporção */
     }
 
     .menu-hamburguer {
@@ -725,7 +726,8 @@ footer {
     }
 
     .logo {
-        width: 50%; /* Definir a largura da logo */
+        width: auto; /* Ajustar largura do logotipo */
+        max-width: 100px; /* Definir uma largura máxima menor para telas menores */
     }
 
     .menu-hamburguer {
