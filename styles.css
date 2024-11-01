@@ -667,53 +667,82 @@ footer {
     max-width: 40px;
 }
 
-.menu-hamburguer {
-    display: none; /* Oculte por padrão */
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--cor-primaria); /* Cor do ícone do menu */
-}
-
-@media (max-width: 768px) { /* Ajuste para telas pequenas */
-    .cabecalhoMenuLinks {
-        display: none; /* Oculte o menu por padrão */
-        flex-direction: column; /* Organiza os itens em coluna */
-        position: absolute;
-        background: var(--cor-secundaria); /* Cor de fundo do menu */
-        top: 60px; /* Ajuste conforme necessário */
-        right: 0;
-        width: 100%; /* Largura total */
-        z-index: 10; /* Coloca acima de outros elementos */
+@media (max-width: 768px) { /* Para telas menores que 768px */
+    .cabecalho {
+        padding: 1% 5%; /* Reduzir o padding */
+        margin-bottom: 100px; /* Ajustar o espaço inferior */
     }
 
-    .cabecalhoMenuLinks.active {
-        display: flex; /* Mostre o menu quando ativo */
-    }
-
-    .menu-hamburguer {
-        display: block; /* Mostre o botão hamburguer */
-    }
-}
-
-/* Estilos adicionais para telas muito pequenas */
-@media (max-width: 480px) { /* Para smartphones */
     .cabecalhoMenu {
-        flex-direction: column; /* Empilha logo e botão hamburguer */
-        align-items: flex-start; /* Alinha à esquerda */
-    }
-
-    .cabecalhoMenuLinks {
-        top: 50px; /* Ajuste a posição do menu */
+        flex-direction: column; /* Mudar para coluna */
+        align-items: flex-start; /* Alinhar os itens à esquerda */
+        gap: 20px; /* Reduzir o espaço entre os itens */
     }
 
     .logo {
-        width: 50%; /* Ajusta a largura da logo em telas menores */
-        margin: 0 auto; /* Centraliza a logo */
+        width: 50%; /* Aumentar a largura da logo para ocupar mais espaço */
+        margin: 0 auto; /* Centralizar a logo */
+    }
+
+    .menu-hamburguer {
+        display: block; /* Mostrar o botão hamburguer */
+        margin-left: auto; /* Alinhar à direita */
+        background-color: transparent; /* Fundo transparente */
+        border: none; /* Remover borda */
+        font-size: 24px; /* Aumentar o tamanho do ícone */
+    }
+
+    .cabecalhoMenuLinks {
+        display: none; /* Ocultar os links do menu padrão */
+        flex-direction: column; /* Empilhar os links verticalmente */
+        width: 100%; /* Ocupação total da largura */
+        background-color: var(--cor-secundaria); /* Fundo para o menu */
+        position: absolute; /* Posicionar acima do conteúdo */
+        top: 60px; /* Posicionar abaixo do cabeçalho */
+        left: 0; /* Alinhar à esquerda */
+        z-index: 10; /* Colocar acima de outros elementos */
+    }
+
+    .cabecalhoMenuLinks.active {
+        display: flex; /* Mostrar links quando o menu estiver ativo */
     }
 
     .cabecalhoMenuLink {
-        font-size: 18px; /* Reduz o tamanho da fonte em telas pequenas */
+        padding: 15px; /* Adicionar padding nos links */
+        font-size: 18px; /* Ajustar o tamanho da fonte */
+        color: var(--cor-primaria);
+        text-align: center; /* Centralizar texto */
+        border-bottom: 1px solid #ccc; /* Adicionar separador entre os links */
     }
+}
+
+@media (max-width: 480px) { /* Para telas menores que 480px */
+    .cabecalho {
+        padding: 5%; /* Aumentar padding para maior área de toque */
+        margin-bottom: 80px; /* Ajustar o espaço inferior */
+    }
+
+    .logo {
+        width: 70%; /* Aumentar a largura da logo para ocupar mais espaço */
+        margin: 0 auto; /* Centralizar a logo */
+    }
+
+    .menu-hamburguer {
+        font-size: 28px; /* Aumentar o tamanho do ícone do botão */
+    }
+
+    .cabecalhoMenuLink {
+        padding: 10px; /* Reduzir o padding para links */
+        font-size: 16px; /* Ajustar o tamanho da fonte */
+    }
+
+    .cabecalhoMenuLinks {
+        top: 50px; /* Ajustar a posição do menu */
+    }
+}
+
+/* Exibir o menu quando o botão for clicado */
+.menu-hamburguer:focus + .cabecalhoMenuLinks,
+.menu-hamburguer:active + .cabecalhoMenuLinks {
+    display: flex; /* Mostrar links quando o botão for ativo */
 }
