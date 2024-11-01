@@ -667,107 +667,53 @@ footer {
     max-width: 40px;
 }
 
-@media (max-width: 768px) {
-    /* Ajuste para o cabeçalho */
-    .cabecalho {
-        padding: 5%;
+.menu-hamburguer {
+    display: none; /* Oculte por padrão */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--cor-primaria); /* Cor do ícone do menu */
+}
+
+@media (max-width: 768px) { /* Ajuste para telas pequenas */
+    .cabecalhoMenuLinks {
+        display: none; /* Oculte o menu por padrão */
+        flex-direction: column; /* Organiza os itens em coluna */
+        position: absolute;
+        background: var(--cor-secundaria); /* Cor de fundo do menu */
+        top: 60px; /* Ajuste conforme necessário */
+        right: 0;
+        width: 100%; /* Largura total */
+        z-index: 10; /* Coloca acima de outros elementos */
     }
 
+    .cabecalhoMenuLinks.active {
+        display: flex; /* Mostre o menu quando ativo */
+    }
+
+    .menu-hamburguer {
+        display: block; /* Mostre o botão hamburguer */
+    }
+}
+
+/* Estilos adicionais para telas muito pequenas */
+@media (max-width: 480px) { /* Para smartphones */
     .cabecalhoMenu {
-        flex-direction: column;
-        gap: 20px;
-        margin: 10px;
+        flex-direction: column; /* Empilha logo e botão hamburguer */
+        align-items: flex-start; /* Alinha à esquerda */
+    }
+
+    .cabecalhoMenuLinks {
+        top: 50px; /* Ajuste a posição do menu */
     }
 
     .logo {
-        width: 50%;
+        width: 50%; /* Ajusta a largura da logo em telas menores */
+        margin: 0 auto; /* Centraliza a logo */
     }
 
-    /* Ajustes para apresentação */
-    .apresentacao {
-        flex-direction: column;
-    }
-
-    .apresentacaoCall {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .imagemFrete,
-    .imagemMoveis {
-        width: 80%;
-    }
-
-    /* Ajustes de tamanho e layout para seções de call-to-action */
-    .callToAction,
-    .callToActionMontagens {
-        width: 100%;
-        height: auto;
-        margin: 20px 0;
-        padding: 20px;
-    }
-
-    .callToActionBotao,
-    .callToActionMontagensBotao {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .callToActionIcone,
-    .callToActionTitulo,
-    .callToActionTexto {
-        width: 100%;
-    }
-
-    /* Ajustes para o slider */
-    .sliderSectionBlocoPrimeiro {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .sliderSectionBlocoPrimeiroImagem,
-    .sliderSectionBlocoPrimeiroTitulo,
-    .sliderSectionBlocoPrimeiroParagrafo {
-        width: 100%;
-        margin: 0;
-        padding: 10px;
-    }
-
-    /* Ajustes para a seção de serviços */
-    .servicosApresentacao {
-        height: auto;
-        padding: 20px;
-    }
-
-    .servicosApresentacaoIconTextoTitulo {
-        width: 100%;
-        font-size: 18px;
-    }
-
-    .servicosApresentacaoTextoParagrafo {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    /* Ajustes para a seção de fretes */
-    .fretesApresentacao {
-        height: auto;
-        padding: 20px;
-        flex-direction: column;
-    }
-
-    .fretesApresentacaoContainerIcone {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .fretesApresentacaoContainerIconeImagem {
-        width: 100px;
-    }
-
-    .fretesApresentacaoContainerTexto {
-        max-width: 100%;
-        padding: 10px;
-        font-size: 16px;
+    .cabecalhoMenuLink {
+        font-size: 18px; /* Reduz o tamanho da fonte em telas pequenas */
     }
 }
