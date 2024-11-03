@@ -60,6 +60,7 @@ cabecalho {
     font-style: bold;
     color: var(--cor-primaria);
     text-decoration: none;
+    padding: 20px;
     
 }
 
@@ -667,80 +668,86 @@ footer {
     max-width: 40px;
 }
 
-@media (max-width: 768px) { /* Para telas menores que 768px */
-    .cabecalho {
-        padding: 1% 5%; /* Reduzir o padding */
-        margin-bottom: 100px; /* Ajustar o espaço inferior */
-        display: flex; /* Ativar flexbox */
-        justify-content: space-between; /* Espaçar logo e menu hamburguer */
-        align-items: center; /* Centralizar verticalmente */
-    }
-
+@media (max-width: 768px) {
     .cabecalhoMenu {
-        flex-direction: column; /* Mudar para coluna */
-        align-items: flex-start; /* Alinhar os itens à esquerda */
-        gap: 20px; /* Reduzir o espaço entre os itens */
+        flex-direction: column; /* Altera a direção para coluna */
+        align-items: center; /* Alinha os itens ao centro */
+        gap: 0;
+        padding: 0;
     }
 
     .logo {
-        width: auto; /* Ajustar largura do logotipo */
-        max-width: 150px; /* Definir uma largura máxima */
-        height: auto; /* Manter a proporção */
-    }
-
-    .menu-hamburguer {
-        display: block; /* Mostrar o botão hamburguer */
-        background-color: transparent; /* Fundo transparente */
-        border: none; /* Remover borda */
-        font-size: 24px; /* Aumentar o tamanho do ícone */
+        flex: 0 0 30%; /* Mantém 30% da largura para a logo */
+        max-width: 100%; /* Garante que a logo não ultrapasse seu container */
     }
 
     .cabecalhoMenuLinks {
-        display: none; /* Ocultar os links do menu padrão */
-        flex-direction: column; /* Empilhar os links verticalmente */
-        width: 100%; /* Ocupação total da largura */
-        background-color: var(--cor-secundaria); /* Fundo para o menu */
-        position: absolute; /* Posicionar acima do conteúdo */
-        top: 60px; /* Posicionar abaixo do cabeçalho */
-        left: 0; /* Alinhar à esquerda */
-        z-index: 10; /* Colocar acima de outros elementos */
-    }
-
-    .cabecalhoMenuLinks.active {
-        display: flex; /* Mostrar links quando o menu estiver ativo */
+        flex: 0 0 70%; /* Mantém 70% da largura para os links */
+        display: flex;
+        flex-wrap: wrap; /* Permite que os links envolvam */
+        justify-content: center; /* Centraliza os links */
+        gap: 0;
     }
 
     .cabecalhoMenuLink {
-        padding: 15px; /* Adicionar padding nos links */
-        font-size: 18px; /* Ajustar o tamanho da fonte */
-        color: var(--cor-primaria);
-        text-align: center; /* Centralizar texto */
-        border-bottom: 1px solid #ccc; /* Adicionar separador entre os links */
+        font-size: 14px; /* Ajusta o tamanho da fonte para caber melhor */
+        margin: 5px 10px; /* Ajusta o espaçamento entre os links */
     }
 }
 
-@media (max-width: 480px) { /* Para telas menores que 480px */
+@media (max-width: 480px) {
+
+    body {
+        margin: 0;
+    }
+
+    .cabecalhoMenuLinks .cabecalhoMenuLink[href="#clientes"],
+    .cabecalhoMenuLinks .cabecalhoMenuLink[href="#moveis"] {
+        display: none;
+    }
+
     .cabecalho {
-        padding: 5%; /* Aumentar padding para maior área de toque */
-        margin-bottom: 80px; /* Ajustar o espaço inferior */
+        width: 100%; /* O cabeçalho ocupa toda a largura da tela */
+    }
+
+    .cabecalhoMenu {
+        display: flex; /* Garante que os elementos sejam flexíveis */
+        width: 100%; /* Garante que o cabeçalhoMenu ocupe 100% da largura */
+        padding: 0; /* Remove qualquer padding extra, se houver */
+        overflow: hidden;
     }
 
     .logo {
-        width: auto; /* Ajustar largura do logotipo */
-        max-width: 100px; /* Definir uma largura máxima menor para telas menores */
+        width: 40%;
+        align-content: center;
     }
 
-    .menu-hamburguer {
-        font-size: 28px; /* Aumentar o tamanho do ícone do botão */
-    }
-
+    
     .cabecalhoMenuLinks {
-        top: 50px; /* Ajustar a posição do menu */
+        display: flex; /* Garante que os links sejam flexíveis */
+        width: 100%; /* Faz os links ocuparem 70% do cabeçalho */
+        justify-content: space-between; /* Distribui os links uniformemente com espaçamento reduzido */
     }
-}
 
-/* Exibir o menu quando o botão for clicado */
-.menu-hamburguer:focus + .cabecalhoMenuLinks,
-.menu-hamburguer:active + .cabecalhoMenuLinks {
-    display: flex; /* Mostrar links quando o botão for ativo */
+    .cabecalhoMenuLink {
+        flex: 1; /* Faz os links ocuparem o mesmo espaço */
+        text-align: center; /* Centraliza o texto dos links */
+        font-size: 14px; /* Reduz ainda mais o tamanho da fonte dos links */
+        margin: 0; /* Remove margem entre os links */
+        width: 100%;
+    }
+
+    .apresentacaoCall {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        
+    }
+    .imagemFrete {
+        display: none;
+    }
+    .imagemMoveis {
+        display: none;
+    }
+   
 }
