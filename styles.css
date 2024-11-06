@@ -711,6 +711,7 @@ footer {
 
     .cabecalho {
         width: 100%; /* O cabeçalho ocupa toda a largura da tela */
+        margin-top: 5px;
         
     }
 
@@ -727,6 +728,7 @@ footer {
     .logo {
         width: 40%;
         align-content: center;
+        margin-top: 10px;
     }
 
    
@@ -794,6 +796,7 @@ footer {
         transition: transform 0.3s ease-out; /* Transição suave */
         width: 100%; /* Certifica-se de que o contêiner dos slides ocupe toda a largura */
         flex-wrap: nowrap; /* Evita que os slides quebrem para a linha seguinte */
+        justify-content: space-between; 
     }
     
     /* Estilo dos slides */
