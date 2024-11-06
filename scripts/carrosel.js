@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function showSlide(index) {
         const slider = document.querySelector('.sliderSectionCarroselBloco');
-        const offset = -index * 104; // Move para a esquerda pela largura de um slide
+        const offset = -index * 104.5; // Move para a esquerda pela largura de um slide
         slider.style.transform = `translateX(${offset}%)`; // Aplica a transformação
     }
 
