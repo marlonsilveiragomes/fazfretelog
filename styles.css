@@ -697,6 +697,11 @@ footer {
 
 @media (max-width: 480px) {
 
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
     
 
     .cabecalhoMenuLinks .cabecalhoMenuLink[href="#clientes"],
@@ -706,6 +711,7 @@ footer {
 
     .cabecalho {
         width: 100%; /* O cabeçalho ocupa toda a largura da tela */
+        
     }
 
     .cabecalhoMenu {
@@ -713,6 +719,9 @@ footer {
         width: 100%; /* Garante que o cabeçalhoMenu ocupe 100% da largura */
         padding: 0; /* Remove qualquer padding extra, se houver */
         overflow: hidden;
+        margin: 0;
+        padding: 0;
+        
     }
 
     .logo {
@@ -724,14 +733,15 @@ footer {
     
     .cabecalhoMenuLinks {
         display: flex; /* Garante que os links sejam flexíveis */
-        width: 100%; /* Faz os links ocuparem 70% do cabeçalho */
-        justify-content: space-between; /* Distribui os links uniformemente com espaçamento reduzido */
+        width: auto; /* Faz os links ocuparem 70% do cabeçalho */
+        justify-content: space-between; 
+        gap: 20px;/* Distribui os links uniformemente com espaçamento reduzido */
     }
 
     .cabecalhoMenuLink {
         flex: 1; /* Faz os links ocuparem o mesmo espaço */
         text-align: center; /* Centraliza o texto dos links */
-        font-size: 14px; /* Reduz ainda mais o tamanho da fonte dos links */
+        font-size: 18px; /* Reduz ainda mais o tamanho da fonte dos links */
         margin: 0; /* Remove margem entre os links */
         width: 100%;
     }
@@ -748,6 +758,8 @@ footer {
     .imagemMoveis {
         display: none;
     }
+
+
     .sliderSectionBlocoPrimeiro {
         display: flex;
         flex-direction: column;
@@ -764,24 +776,37 @@ footer {
     .sliderSectionBlocoPrimeiroParagrafo {
         display: none;
     }
+
     .sliderSectionCarrosel {
-        width: 100%;
-        height: 300px;
-        overflow: hidden;
+        width: 100%; /* O carrossel ocupa toda a largura da tela */
+        height: 350px; /* Altura fixa para o carrossel */
+        overflow: hidden; /* Oculta qualquer conteúdo fora da área visível */
         position: relative;
         background-color: #F0F2F5;
         font-size: 18px;
-        
-    }
-    .sliderSectionCarroselBloco {
-        display: flex;
-        transition: transform 0.3s ease-out; /* Transição rápida para experiência melhor em telas menores */
-        
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        
+        display: flex; /* Alinha os slides na direção correta */
     }
     
-   
+    /* Contêiner dos slides */
+    .sliderSectionCarroselBloco {
+        display: flex; /* Flexbox para alinhar os slides horizontalmente */
+        transition: transform 0.3s ease-out; /* Transição suave */
+        width: 100%; /* Certifica-se de que o contêiner dos slides ocupe toda a largura */
+        flex-wrap: nowrap; /* Evita que os slides quebrem para a linha seguinte */
+    }
+    
+    /* Estilo dos slides */
+    .slide {
+        flex: 0 0 100%; /* Cada slide ocupa 100% da largura do carrossel */
+        box-sizing: border-box; /* Garante que o padding não afete a largura */
+        height: 100%; /* Garante que os slides tenham a mesma altura que o contêiner */
+    }
+    
+    /* Ajustes adicionais para os slides */
+    .slide img {
+        width: 100%; /* Faz a imagem ocupar toda a largura do slide */
+        height: auto; /* Faz a imagem ocupar toda a altura do slide */
+        object-fit: cover; 
+        margin-left: 0;/* Faz a imagem cobrir toda a área do slide sem deformar */
+    }
 }
