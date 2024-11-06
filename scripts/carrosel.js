@@ -9,9 +9,13 @@ function showSlide(index) {
 }
 
 function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides; // Avança para o próximo slide
+    if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+    } else {
+        currentSlide = 0;
+    }
     showSlide(currentSlide);
 }
 
 // Inicia o slide
-setInterval(nextSlide, 3000); // Troca a cada 3 segundos
+setInterval(nextSlide, 7000); // Troca a cada 3 segundos
